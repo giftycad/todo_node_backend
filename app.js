@@ -9,6 +9,11 @@ const PORT = process.env.PORT || 3000;
 
 //route api
 app.use(express.json());
+
+app.get('/',function(req,res){
+    res.status(200).json({message: 'Welcome to the GFT daily api'})
+});
+
 app.get('/todos',todoController.getAllTodo);
 
 app.post('/todos',todoController.addTodo);
